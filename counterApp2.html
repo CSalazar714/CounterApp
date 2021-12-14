@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="counterAppCSS.css"
+</head>
+<body>
+    <div id="total">0</div>
+    <br>
+    <button id="add">+</button>
+    <button id="subtract">-</button>
+    <button id="mult-2">x2</button>
+    <button id="div-2">/2</button>
+    <button id="mult-5">x5</button>
+    <button id="div-5">/5</button>
+    <button id="reset">reset</button>
+    <script>
+        // Select Total / Create Variables
+        let total = document.getElementById('total');
+        let count = 0
+        // Create Six Functions
+        function add(){
+            count++;
+            update()
+        }
+
+        function subtract(){
+            count-- ;
+            update()
+        }
+        function mult2(){
+            count *= 2;
+            update()
+        }
+        function mult5(){
+            count *= 5;
+            update()
+        }
+        function divide2(){
+            count /= 2;
+            update()
+        }
+        function divide5(){
+            count /= 5;
+            update()
+        }
+        function reset(){
+            count = 0;
+            total.textContent == count;
+            alert("count reset to 0");
+                                }
+        function update(){
+            total.textContent = count
+            alert (count)
+        }
+
+        
+        // Attach Functions to Buttons
+        document.getElementById("add").onclick = add;
+        document.getElementById("subtract").onclick = subtract;
+        document.getElementById("mult-2").onclick = mult2;
+        document.getElementById("mult-5").onclick = mult5;
+        document.getElementById("div-2").onclick = divide2;
+        document.getElementById("div-5").onclick = divide5;
+        document.getElementById("reset").onclick = reset;
+
+    </script>
+</body>
